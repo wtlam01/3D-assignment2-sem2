@@ -5,6 +5,7 @@ using UnityEngine;
 public class startcannon : MonoBehaviour
 {
     public AudioClip cannonShot;
+    public ParticleSystem smoke;
 
     public GameObject ui;
 
@@ -31,6 +32,8 @@ public class startcannon : MonoBehaviour
     public void ShootCannon()
     {
         gameObject.GetComponent<AudioSource>().PlayOneShot(cannonShot);
+
+        smoke.Play();
     }
 
     public void HideUI()
