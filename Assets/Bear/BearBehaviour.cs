@@ -5,6 +5,7 @@ using UnityEngine;
 public class BearBehaviour : MonoBehaviour
 {
     public Animator bear;
+      public AudioClip bearRoar;
     void Start()
     {
         
@@ -22,6 +23,7 @@ public class BearBehaviour : MonoBehaviour
     if(other.tag == "Player"){
 
       bear.SetTrigger("Attack");
+      gameObject.GetComponent<AudioSource>().PlayOneShot(bearRoar);
 
     }
    }
