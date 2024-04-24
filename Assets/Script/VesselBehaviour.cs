@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class VesselBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+   // Reference to the vessel object
+    public GameObject vessel;
+
+
+    private bool insideVessel = false;
+
+    void OnTriggerEnter(Collider other)
     {
         
+        if (other.gameObject == vessel)
+        {
+            insideVessel = true;
+            Debug.Log("Entered vessel");
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    void OnTriggerExit(Collider other)
     {
-        
+      
+        if (other.gameObject == vessel)
+        {
+            insideVessel = false;
+            Debug.Log("Exited vessel");
+        }
     }
 }
